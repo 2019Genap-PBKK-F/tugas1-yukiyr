@@ -37,7 +37,7 @@ const routes = [
         path: 'mahasiswa',
         component: MahasiswaView,
         name: 'Mahasiswa',
-        meta: {description: 'Simple and advance table in CoPilot'}
+        meta: {description: 'Jexcel in CoPilot'}
       }, {
         path: 'tasks',
         component: TasksView,
