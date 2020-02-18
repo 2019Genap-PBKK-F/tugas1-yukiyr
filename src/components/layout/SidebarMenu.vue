@@ -16,7 +16,7 @@
     <router-link tag="li" class="pageLink" to="/mahasiswa">
       <a>
         <i class="fa fa-table"></i>
-        <span class="page">Mahasiswa</span>
+        <span class="page">College Studets</span>
       </a>
     </router-link>
 
