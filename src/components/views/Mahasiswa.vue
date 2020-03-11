@@ -1,38 +1,82 @@
 <template>
   <div>
     <div id="app" ref="spreadsheet"></div>
-    <div><input type="button" value="Add new row" @click="() => spreadsheet.insertRow()" /></div>
+    <div>
+        <input type="button" value="Add New Row" @click="() => spreadsheet.insertRow()" />
+        <input type="button" value="Delete Selected Row" @click="() => spreadsheet.deleteRow()" />
+    </div>
   </div>
 </template>
 
 <script>
 import jexcel from 'jexcel'
 import 'jexcel/dist/jexcel.css'
-
-var data = [
-  ['05111740000023', 'Yuki Yanuar Ratna', '2017', '2019-02-12', '', true],
-  ['05111740000044', 'Izzah Dinillah', '2017', '2018-07-11', '', true]
-]
-
-var options = {
-  data: data,
-  allowToolbar: true,
-  columns: [
-    { type: 'text', title: 'NRP', width: '120px' },
-    { type: 'text', title: 'Nama', width: '120px' },
-    { type: 'dropdown', title: 'Angkatan', width: '250px', source: [ '2015', '2016', '2017', '2018', '2019' ] },
-    { type: 'calendar', title: 'Tanggal Lahir', width: '250px' },
-    { type: 'image', title: 'Photo', width: '120px' },
-    { type: 'checkbox', title: 'Aktif', width: '80px' }
-  ]
-}
+import axios from 'axios'
 
 export default {
-  name: 'App',
-  mounted: function () {
-    let spreadsheet = jexcel(this.$el, options)
+  // name: 'App',
+  data() {
+    return {
+      Mahasiswa: [],
+      form: {
+        Id: '',
+        NRP: '',
+        Nama: '',
+        Tgl_lahir: ''
+      }
+    }
+  },
+  mounted() {
+    let spreadsheet = jexcel(this.$el, this.jexcelOptions)
     Object.assign(this, { spreadsheet })
+  },
+  methods: {
+    newRow() {
+      axios.post('http://10.199.14.46:8005/api/Mahasiswa/', this.form).then(res => {
+        console.log(res.data)
+      })
+    },
+    updateRow(instance, cell, columns, row, value) {
+      axios.get('http://10.199.14.46:8005/api/Mahasiswa/').then(res => {
+        var index = Object.values(res.data[row])
+        index[columns] = value
+        console.log(index)
+        axios.put('http://10.199.14.46:8005/api/Mahasiswa/' + index[0], {
+          Id: index[0],
+          NRP: index[1],
+          Nama: index[2],
+          Tgl_lahir: index[3]
+        }).then(res => {
+          console.log(res.data)
+        })
+      })
+    },
+    deleteRow(instance, row) {
+      axios.get('http://10.199.14.46:8005/api/Mahasiswa/').then(res => {
+        var index = Object.values(res.data[row])
+        // console.log(index)
+        console.log(row)
+        axios.delete('http://10.199.14.46:8005/api/Mahasiswa/' + index[0])
+      })
+    }
+  },
+  computed: {
+    jexcelOptions() {
+      return {
+        data: this.Mahasiswa,
+        allowToolbar: true,
+        url: 'http://10.199.14.46:8005/api/Mahasiswa/',
+        onchange: this.updateRow,
+        oninsertrow: this.newRow,
+        ondeleterow: this.deleteRow,
+        columns: [
+          { type: 'hidden', title: 'Id', width: '50px' },
+          { type: 'text', title: 'NRP', width: '120px' },
+          { type: 'text', title: 'Nama', width: '200px' },
+          { type: 'calendar', title: 'Tanggal Lahir', width: '120px' }
+        ]
+      }
+    }
   }
 }
-
 </script>
