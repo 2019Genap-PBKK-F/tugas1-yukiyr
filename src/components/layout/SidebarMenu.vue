@@ -16,7 +16,35 @@
     <router-link tag="li" class="pageLink" to="/mahasiswa">
       <a>
         <i class="fa fa-table"></i>
-        <span class="page">College Studets</span>
+        <span class="page">Mahasiswa</span>
+      </a>
+    </router-link>
+        </router-link>
+    <router-link tag="li" class="pageLink" to="/dataDasar">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Data Dasar</span>
+      </a>
+    </router-link>
+        </router-link>
+    <router-link tag="li" class="pageLink" to="/kategoriUnit">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Kategori Unit</span>
+      </a>
+    </router-link>
+        </router-link>
+    <router-link tag="li" class="pageLink" to="/unit">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Unit</span>
+      </a>
+    </router-link>
+        </router-link>
+    <router-link tag="li" class="pageLink" to="/capaianUnit">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Capaian Unit</span>
       </a>
     </router-link>
 
