@@ -6,6 +6,10 @@ import NotFoundView from './components/404.vue'
 import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
 import MahasiswaView from './components/views/Mahasiswa.vue'
+import DataDasarView from './components/views/DataDasar.vue'
+import KategoriUnitView from './components/views/KategoriUnit.vue'
+import UnitView from './components/views/Unit.vue'
+import CapaianUnitView from './components/views/Capaian_Unit.vue'
 import TasksView from './components/views/Tasks.vue'
 import SettingView from './components/views/Setting.vue'
 import AccessView from './components/views/Access.vue'
@@ -37,7 +41,27 @@ const routes = [
         path: 'mahasiswa',
         component: MahasiswaView,
         name: 'Mahasiswa',
-        meta: {description: 'Jexcel in CoPilot'}
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'dataDasar',
+        component: DataDasarView,
+        name: 'DataDasar',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'kategoriUnit',
+        component: KategoriUnitView,
+        name: 'KategoriUnit',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'unit',
+        component: UnitView,
+        name: 'Unit',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'capaianUnit',
+        component: CapaianUnitView,
+        name: 'Capaian_Unit',
+        meta: {description: 'Simple and advance table in CoPilot'}
       }, {
         path: 'tasks',
         component: TasksView,
