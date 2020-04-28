@@ -19,8 +19,8 @@ export default {
     return {
       Capaian_Unit: [],
       form: {
-        DataDasar_id: '',
-        Unit_id: '',
+        id_satker: 'kode002',
+        id_datadasar: 1,
         waktu: '',
         capaian: ''
       }
@@ -41,9 +41,9 @@ export default {
         var index = Object.values(res.data[row])
         index[columns] = value
         console.log(index)
-        axios.put('http://localhost:8005/api/Capaian_Unit/' + index[0], {
-          DataDasar_id: index[0],
-          Unit_id: index[1],
+        axios.put('http://localhost:8005/api/Capaian_Unit/' + index[1], {
+          id_satker: index[0],
+          id_datadasar: index[1],
           waktu: index[2],
           capaian: index[3]
         }).then(res => {
@@ -56,7 +56,7 @@ export default {
         var index = Object.values(res.data[row])
         // console.log(index)
         console.log(row)
-        axios.delete('http://localhost:8005/api/Capaian_Unit/' + index[0])
+        axios.delete('http://localhost:8005/api/Capaian_Unit/' + index[1])
       })
     }
   },
@@ -70,9 +70,9 @@ export default {
         oninsertrow: this.newRow,
         ondeleterow: this.deleteRow,
         columns: [
-          { type: 'text', title: 'DataDasar', width: '50px' },
-          { type: 'text', title: 'Unit_id', width: '50px' },
-          { type: 'calendar', title: 'waktu', width: '50px' },
+          { type: 'text', title: 'id_satker', width: '120px' },
+          { type: 'text', title: 'id_datadasar', width: '120px' },
+          { type: 'text', title: 'waktu', width: '200px' },
           { type: 'text', title: 'capaian', width: '200px' }
         ]
       }
