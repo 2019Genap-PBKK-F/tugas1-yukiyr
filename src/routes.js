@@ -7,9 +7,16 @@ import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
 import MahasiswaView from './components/views/Mahasiswa.vue'
 import DataDasarView from './components/views/DataDasar.vue'
-import KategoriUnitView from './components/views/KategoriUnit.vue'
-import UnitView from './components/views/Unit.vue'
+import AspekView from './components/views/Aspek.vue'
+import MasterIndikatorView from './components/views/MasterIndikator.vue'
+import JenisSatkerView from './components/views/JenisSatker.vue'
+import PeriodeView from './components/views/Periode.vue'
+import IndikatorPeriodeView from './components/views/Indikator_Periode.vue'
+import SatuanKerjaView from './components/views/SatuanKerja.vue'
 import CapaianUnitView from './components/views/Capaian_Unit.vue'
+import IndikatorSatuanKerjaView from './components/views/Indikator_SatuanKerja.vue'
+import IndikatorSatuanKerjaLogView from './components/views/Indikator_SatuanKerja_Log.vue'
+import CobaView from './components/views/Coba.vue'
 import TasksView from './components/views/Tasks.vue'
 import SettingView from './components/views/Setting.vue'
 import AccessView from './components/views/Access.vue'
@@ -43,24 +50,59 @@ const routes = [
         name: 'Mahasiswa',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
-        path: 'dataDasar',
+        path: 'DataDasar',
         component: DataDasarView,
         name: 'DataDasar',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
-        path: 'kategoriUnit',
-        component: KategoriUnitView,
-        name: 'KategoriUnit',
+        path: 'Aspek',
+        component: AspekView,
+        name: 'Aspek',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
-        path: 'unit',
-        component: UnitView,
-        name: 'Unit',
+        path: 'MasterIndikator',
+        component: MasterIndikatorView,
+        name: 'MasterIndikator',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
-        path: 'capaianUnit',
+        path: 'JenisSatker',
+        component: JenisSatkerView,
+        name: 'JenisSatker',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Periode',
+        component: PeriodeView,
+        name: 'Periode',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Indikator_Periode',
+        component: IndikatorPeriodeView,
+        name: 'Indikator_Periode',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'SatuanKerja',
+        component: SatuanKerjaView,
+        name: 'SatuanKerja',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Capaian_Unit',
         component: CapaianUnitView,
         name: 'Capaian_Unit',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Indikator_SatuanKerja',
+        component: IndikatorSatuanKerjaView,
+        name: 'Indikator_SatuanKerja',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Indikator_SatuanKerja_Log',
+        component: IndikatorSatuanKerjaLogView,
+        name: 'Indikator_SatuanKerja_Log',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Coba',
+        component: CobaView,
+        name: 'Coba',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
         path: 'tasks',
