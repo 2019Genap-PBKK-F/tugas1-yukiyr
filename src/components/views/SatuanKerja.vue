@@ -23,7 +23,10 @@ export default {
         nama: '',
         level_unit: '',
         id_induk_satker: '',
-        id_jns_satker: ''
+        id_jns_satker: '',
+        create_date: '',
+        last_update: '',
+        expired_date: ''
       }
     }
   },
@@ -47,7 +50,10 @@ export default {
           nama: index[1],
           level_induk: index[2],
           id_induk_satker: index[3],
-          id_jns_satker: index[4]
+          id_jns_satker: index[4],
+          create_date: index[5],
+          last_update: index[6],
+          expired_date: index[7]
         }).then(res => {
           console.log(res.data)
         })
@@ -76,7 +82,10 @@ export default {
           { type: 'text', title: 'nama', width: '130px', wordWrap: true },
           { type: 'text', title: 'level_induk', width: '90px' },
           { type: 'text', title: 'id_induk_satker', width: '280px' },
-          { type: 'text', title: 'id_jns_satker', width: '90px' }
+          { type: 'text', title: 'id_jns_satker', width: '90px' },
+          { type: 'text', title: 'create_date', width: '100px' },
+          { type: 'text', title: 'last_update', width: '100px' },
+          { type: 'text', title: 'expired_date', width: '100px' }
         ]
       }
     }
