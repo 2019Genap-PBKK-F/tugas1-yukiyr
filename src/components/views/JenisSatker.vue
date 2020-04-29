@@ -20,7 +20,10 @@ export default {
       JenisSatker: [],
       form: {
         id: '',
-        nama: ''
+        nama: '',
+        create_date: '',
+        last_update: '',
+        expired_date: ''
       }
     }
   },
@@ -41,7 +44,10 @@ export default {
         console.log(index)
         axios.put('http://localhost:8005/api/JenisSatker/' + index[0], {
           id: index[0],
-          nama: index[1]
+          nama: index[1],
+          create_date: index[2],
+          last_update: index[3],
+          expired_date: index[4]
         }).then(res => {
           console.log(res.data)
         })
@@ -67,7 +73,10 @@ export default {
         ondeleterow: this.deleteRow,
         columns: [
           { type: 'text', title: 'id', width: '50px' },
-          { type: 'text', title: 'nama', width: '200px' }
+          { type: 'text', title: 'nama', width: '200px' },
+          { type: 'text', title: 'create_date', width: '110px' },
+          { type: 'text', title: 'last_update', width: '110px' },
+          { type: 'text', title: 'expired_date', width: '110px' }
         ]
       }
     }
