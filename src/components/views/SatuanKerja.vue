@@ -21,6 +21,7 @@ export default {
       form: {
         id: '',
         nama: '',
+        email: '',
         level_unit: '',
         id_induk_satker: '',
         id_jns_satker: '',
@@ -48,12 +49,13 @@ export default {
         axios.put('http://localhost:8005/api/SatuanKerja/' + index[0], {
           id: index[0],
           nama: index[1],
-          level_induk: index[2],
-          id_induk_satker: index[3],
-          id_jns_satker: index[4],
-          create_date: index[5],
-          last_update: index[6],
-          expired_date: index[7]
+          email: index[2],
+          level_induk: index[3],
+          id_induk_satker: index[4],
+          id_jns_satker: index[5],
+          create_date: index[6],
+          last_update: index[7],
+          expired_date: index[8]
         }).then(res => {
           console.log(res.data)
         })
@@ -80,7 +82,8 @@ export default {
         columns: [
           { type: 'text', title: 'id', width: '280px' },
           { type: 'text', title: 'nama', width: '130px', wordWrap: true },
-          { type: 'text', title: 'level_induk', width: '90px' },
+          { type: 'text', title: 'email', width: '70px' },
+          { type: 'text', title: 'level_induk', width: '80px' },
           { type: 'text', title: 'id_induk_satker', width: '280px' },
           { type: 'text', title: 'id_jns_satker', width: '90px' },
           { type: 'text', title: 'create_date', width: '100px' },
