@@ -6,6 +6,10 @@ import NotFoundView from './components/404.vue'
 import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
 import MahasiswaView from './components/views/Mahasiswa.vue'
+import DosenView from './components/views/Dosen.vue'
+import PenelitianView from './components/views/Penelitian.vue'
+import AbmasView from './components/views/Abmas.vue'
+import PublikasiView from './components/views/Publikasi.vue'
 import DataDasarView from './components/views/DataDasar.vue'
 import AspekView from './components/views/Aspek.vue'
 import MasterIndikatorView from './components/views/MasterIndikator.vue'
@@ -16,7 +20,6 @@ import SatuanKerjaView from './components/views/SatuanKerja.vue'
 import CapaianUnitView from './components/views/Capaian_Unit.vue'
 import IndikatorSatuanKerjaView from './components/views/Indikator_SatuanKerja.vue'
 import IndikatorSatuanKerjaLogView from './components/views/Indikator_SatuanKerja_Log.vue'
-import CobaView from './components/views/Coba.vue'
 import TasksView from './components/views/Tasks.vue'
 import SettingView from './components/views/Setting.vue'
 import AccessView from './components/views/Access.vue'
@@ -48,6 +51,26 @@ const routes = [
         path: 'mahasiswa',
         component: MahasiswaView,
         name: 'Mahasiswa',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Dosen',
+        component: DosenView,
+        name: 'Dosen',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Penelitian',
+        component: PenelitianView,
+        name: 'Penelitian',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Abmas',
+        component: AbmasView,
+        name: 'Abmas',
+        meta: {description: 'Simple and advance table in CoPilot'}
+      }, {
+        path: 'Publikasi',
+        component: PublikasiView,
+        name: 'Publikasi',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
         path: 'DataDasar',
@@ -98,11 +121,6 @@ const routes = [
         path: 'Indikator_SatuanKerja_Log',
         component: IndikatorSatuanKerjaLogView,
         name: 'Indikator_SatuanKerja_Log',
-        meta: {description: 'Simple and advance table in CoPilot'}
-      }, {
-        path: 'Coba',
-        component: CobaView,
-        name: 'Coba',
         meta: {description: 'Simple and advance table in CoPilot'}
       }, {
         path: 'tasks',
