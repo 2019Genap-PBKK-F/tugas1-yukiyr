@@ -19,6 +19,30 @@
         <span class="page">Mahasiswa</span>
       </a>
     </router-link>
+    <router-link tag="li" class="pageLink" to="/Dosen">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Dosen</span>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/Penelitian">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Penelitian</span>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/Abmas">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Abmas</span>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/Publikasi">
+      <a>
+        <i class="fa fa-table"></i>
+        <span class="page">Publikasi</span>
+      </a>
+    </router-link>
     <router-link tag="li" class="pageLink" to="/DataDasar">
       <a>
         <i class="fa fa-table"></i>
