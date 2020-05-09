@@ -35,16 +35,16 @@ export default {
   },
   methods: {
     newRow() {
-      axios.post('http://localhost:8005/api/Indikator_SatuanKerja/', this.form).then(res => {
+      axios.post('http://10.199.14.46:8005/api/Indikator_SatuanKerja/', this.form).then(res => {
         console.log(res.data)
       })
     },
     updateRow(instance, cell, columns, row, value) {
-      axios.get('http://localhost:8005/api/Indikator_SatuanKerja/').then(res => {
+      axios.get('http://10.199.14.46:8005/api/Indikator_SatuanKerja/').then(res => {
         var index = Object.values(res.data[row])
         index[columns] = value
         console.log(index)
-        axios.put('http://localhost:8005/api/Indikator_SatuanKerja/' + index[0], {
+        axios.put('http://10.199.14.46:8005/api/Indikator_SatuanKerja/' + index[0], {
           id_periode: index[0],
           id_master: index[1],
           id_satker: index[2],
@@ -58,11 +58,11 @@ export default {
       })
     },
     deleteRow(instance, row) {
-      axios.get('http://localhost:8005/api/Indikator_SatuanKerja/').then(res => {
+      axios.get('http://10.199.14.46:8005/api/Indikator_SatuanKerja/').then(res => {
         var index = Object.values(res.data[row])
         // console.log(index)
         console.log(row)
-        axios.delete('http://localhost:8005/api/Indikator_SatuanKerja/' + index[0])
+        axios.delete('http://10.199.14.46:8005/api/Indikator_SatuanKerja/' + index[0])
       })
     }
   },
@@ -71,7 +71,7 @@ export default {
       return {
         data: this.Indikator_SatuanKerja,
         allowToolbar: true,
-        url: 'http://localhost:8005/api/Indikator_SatuanKerja/',
+        url: 'http://10.199.14.46:8005/api/Indikator_SatuanKerja/',
         onchange: this.updateRow,
         oninsertrow: this.newRow,
         ondeleterow: this.deleteRow,
